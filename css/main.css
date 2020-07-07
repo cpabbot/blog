@@ -27,18 +27,20 @@
 
 .padded { padding: 1rem; }
 .padded-below { padding-bottom: 1rem; }
-.padded-side { padding: 0 0.5rem; }
+.padded-side { padding: 0 1rem; }
+
+.text {
+    color: var(--text, #bbb);
+}
 
 .link {
     text-decoration: none;
     cursor: pointer;
-    color: var(--primary);
-    color: #BBB;
-    color: var(--text);
+    color: var(--text, #bbb);
     transition: color 100ms;
 }
 
-link:hover {
+.link:hover {
     color: #777;
 }
 
@@ -48,13 +50,10 @@ link:hover {
     --text: #bbb;
 }
 
-.subtitle {
+.title {
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
     margin: 0;
-    line-height: 100px;
-    position: relative;
-    left: 5%;
     display: inline-block;
 }
 
