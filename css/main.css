@@ -4,7 +4,7 @@
 .theme {
     --primary: #8b0000;
     --light-gray: #ddd;
-    --text: #444;
+    --dark-gray: #555;
     --font: 'Montserrat', sans-serif;
     --header-height: 8rem;
 
@@ -17,11 +17,13 @@
 }
 
 .light-theme {
-
+    --post-bg: #eee;
+    --text: var(--dark-gray);
 }
 
 .dark-theme {
-    background-color: #444;
+    background-color: var(--dark-gray);
+    --post-bg: #777;
     --text: #fff;
 }
 
@@ -46,6 +48,8 @@
 .flex-col {
     flex-direction: column;
 }
+
+.no-margin { margin: 0; }
 
 .padded { padding: 1rem; }
 .padded-below { padding-bottom: 1rem; }
@@ -75,7 +79,6 @@
 .title {
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
-    margin: 0;
     display: inline-block;
 }
 
@@ -118,7 +121,19 @@
 }
 
 .post {
-    /* background-color: var(--light-gray); */
+    background-color: var(--post-bg);
     color: var(--text);
-    height: 25rem;
+    height: 15rem;
+    border-radius: 0.5rem;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.post-title {
+    color: var(--text);
+    font-size: 1.5rem;
+}
+
+.post-description {
+
 }
