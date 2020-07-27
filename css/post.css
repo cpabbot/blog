@@ -1,0 +1,11 @@
+.post {
+    height: auto;
+}
+.post-description {
+    overflow: visible;
+    height: auto;
+}
+
+.post-description:after {
+    content: none;
+}
