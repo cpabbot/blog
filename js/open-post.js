@@ -2,6 +2,7 @@ function openPost(hash, shouldTransition) {
     const postLink = document.querySelector('a[href*="' + hash + '"]')
     const post = postLink.parentElement;
     const themeElement = document.getElementsByClassName('theme')[0];
+    const postPageElements = document.getElementsByClassName('post-page');
 
     // coming from the home page, the page fades to 
     // hide the awkward changes in content
@@ -11,6 +12,9 @@ function openPost(hash, shouldTransition) {
         // then show everything
         setTimeout(function() {
             post.classList.add('full-post');
+            for(var i = 0; i < postPageElements.length; i++) {
+                postPageElements[i].classList.remove('notDisplayed');
+            }
             themeElement.classList.remove('hidden');
         }, 200);
     // on a refresh, all content loads instantly
@@ -18,6 +22,9 @@ function openPost(hash, shouldTransition) {
     } else {
         post.classList.remove('fade-in');
         post.classList.add('full-post');
+        for(var i = 0; i < postPageElements.length; i++) {
+            postPageElements[i].classList.remove('notDisplayed');
+        }
     }
 }
 
