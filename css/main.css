@@ -9,7 +9,7 @@
     --gray: #999;
     --font: 'Montserrat', sans-serif;
     --header-height: 8rem;
-    --post-height: 15rem;
+    --post-height: 12.5rem;
     --shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 
               0px 4px 5px 0px rgba(0,0,0,0.14), 
               0px 1px 10px 0px rgba(0,0,0,0.12);
@@ -20,6 +20,11 @@
     /* background-color for theme-mode transition */
     /* opacity expand post fade transition */
     transition: background-color 300ms, opacity 200ms;
+}
+
+.contents {
+    /* opacity expand post fade transition */
+    transition: opacity 200ms;
 }
 
 .light-theme {
@@ -77,9 +82,9 @@
     flex-direction: column;
 }
 
-.no-margin { margin: 0; }
+.no-margin {margin: 0;}
 
-.padded { padding: 1rem; }
+.padded {padding: 1rem;}
 .padded-below { padding-bottom: 1rem; }
 .padded-side { padding: 0 1rem; }
 
@@ -112,7 +117,7 @@
 
 .header {
     justify-content: space-between;
-    height: var(--header-height);
+    /* height: var(--header-height); */
     --text: #aaa;
 }
 
@@ -174,7 +179,7 @@
 
 .post-title {
     color: var(--text);
-    font-size: 1.5rem;
+    font-size: 1.5em;
     white-space: nowrap;
     overflow: hidden;
     max-width: 80vw;
@@ -182,9 +187,8 @@
 }
 
 .post-description {
-    height: calc(var(--post-height) - 5rem);
-    line-height: 1.5rem;
-    height: 6rem;
+    max-height: calc(var(--post-height) - 8rem - 1.5em);
+    line-height: 1.5em;
     overflow: hidden;
     position: relative;
 }
@@ -208,6 +212,8 @@
 }
 
 .post-content {
+    /* height: calc(var(--post-height) - 4rem - 1.5em); */
+    overflow: hidden;
     justify-content: left;
 }
 
@@ -232,6 +238,10 @@
     transition: background-color 300ms;
 }
 
+.full-post .post-title {
+    white-space: unset;
+}
+
 .full-post .post-link {
     /* for back arrow */
     margin-left: 3.5rem;
@@ -240,7 +250,9 @@
 .full-post .post-description {
     overflow: visible;
     height: auto;
+    max-height: auto;
     line-height: 2rem;
+    max-height: initial;
 }
 
 .full-post .post-description:after {
@@ -287,12 +299,26 @@
     z-index: -1;
 }
 
-
+@media(max-width: 500px) {
+    html {
+        /* adjusts all font sizes, em and rem */
+        font-size: 0.8rem;
+    }
+    
+    .post {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
 
 @media(min-width: 700px) {
     .full-post .post-link {
         /* for back arrow */
         margin-left: 0;
+    }
+
+    .header {
+        height: auto;
     }
 
     .post-img {

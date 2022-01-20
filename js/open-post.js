@@ -1,21 +1,22 @@
 function openPost(hash, shouldTransition) {
     const postLink = document.querySelector('a[href*="' + hash + '"]')
     const post = postLink.parentElement;
-    const themeElement = document.getElementsByClassName('theme')[0];
+    // const themeElement = document.getElementsByClassName('theme')[0];
+    const contentsElement = document.getElementsByClassName('contents')[0];
     const postPageElements = document.getElementsByClassName('post-page');
 
     // coming from the home page, the page fades to 
     // hide the awkward changes in content
     if(shouldTransition) {
         // hide the whole page
-        themeElement.classList.add('hidden');
+        contentsElement.classList.add('hidden');
         // then show everything
         setTimeout(function() {
             post.classList.add('full-post');
             for(var i = 0; i < postPageElements.length; i++) {
                 postPageElements[i].classList.remove('notDisplayed');
             }
-            themeElement.classList.remove('hidden');
+            contentsElement.classList.remove('hidden');
         }, 200);
     // on a refresh, all content loads instantly
     // somehow the fade-in class comes back when returning home
@@ -33,7 +34,7 @@ window.addEventListener('load',()=>{
     if(hash.length > 0) {
         openPost(hash, false);
     }
-})
+});
 
 window.addEventListener('hashchange',()=>{
     const hash = window.location.hash;
