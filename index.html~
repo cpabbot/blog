@@ -25,13 +25,12 @@
 <body>
 
 <div class="theme light-theme">
-<div class="contents">
 
 <!--------------- HEADER ----------------->
 <header class="header | container padded">
     <a href="/"><h1 class="title | text padded no-margin" style="padding-left: 4vw;">Pierce the Darkness</h1></a>
     <div class="padded-side" style="padding-left: 4vw; padding-right: 4vw;">
-        <a href="https://cameronabbot.com" class="text link">CAMERON ABBOT</a>
+        <a href="https://cameronabbot.ml" class="text link">CAMERON ABBOT</a>
         <!-- &nbsp;&middot;&nbsp;
         <a href="https://cameronabbot.ml/programs/" class="link">PROGRAMS</a>
         &nbsp;&middot;&nbsp;
@@ -53,8 +52,8 @@
                 Good friends are like <span class="emphasize-post">clouds</span>. You can't always see them, and they're not always there. Sometimes they feel close, other times distance and moving away quickly. They're wonderful in concept but difficult to grasp. They sometimes can block you from reaching for the stars, and as they move away the sun is revealed.
             </p>
             <img src="img/posts/clouds.png" class="expanded-content post-img">
+            <span class="post-date | subtitle">June 13, 2020</span>
         </div>
-        <span class="post-date | subtitle padded-side">June 13, 2020</span>
     </div>
 
     <!-- Sample Post -->
@@ -76,8 +75,7 @@
 
 <!-- for post page only -->
 <div class="back-icon | post-page notDisplayed link">
-    <a href="">
-    <!-- <a onclick="{window.location = window.location.href.split('#')[0]}"> -->
+    <a onclick="{window.location = window.location.href.split('#')[0]}">
         <!-- <img src="img/icons/back.svg"> -->
         <svg fill="var(--text)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 		<path d="M451.997,195.997H205.025l81.965-82.556c17.43-17.537,22.358-42.613,12.861-65.442
@@ -100,7 +98,6 @@
     <img id="theme-icon-img" src="img/icons/night.svg" alt="night mode" width="100%" height="100%">
 </div>
 
-</div>
 </div>
 
 <script src="js/fade-in.js"></script>
