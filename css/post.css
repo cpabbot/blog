@@ -1,11 +1,143 @@
 .post {
-    height: auto;
-}
-.post-description {
-    overflow: visible;
-    height: auto;
+    background-color: var(--post-bg);
+    color: var(--text);
+    height: var(--post-height);
+    border-radius: 0.5rem;
+    justify-content: left;
+    align-items: flex-start;
+    margin: auto 4vw;
+    margin-bottom: 1rem;
+    flex-wrap: nowrap;
 }
 
+.post-title {
+    color: var(--text);
+    font-size: 1.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 80vw;
+    text-overflow: ellipsis;
+}
+
+.post-description {
+    max-height: calc(var(--post-height) - 8rem - 1.5em);
+    line-height: 1.5em;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fades out the overflowing text */
 .post-description:after {
+    content: "";
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10rem;
+    height: 1.5em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--post-bg) 50%);
+}
+
+.post-link {
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+.post-content {
+    /* height: calc(var(--post-height) - 4rem - 1.5em); */
+    /* overflow: hidden; */
+    justify-content: left;
+}
+
+/******** FULL POST *********/
+
+.full-post {
+    height: 100%;
+    margin: 0;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    z-index: 1;
+    align-items: center;
+
+    /* background-color for theme-mode transition */
+    transition: background-color 300ms;
+}
+
+.full-post .post-title {
+    white-space: unset;
+}
+
+.full-post .post-link {
+    /* for back arrow */
+    margin-left: 3.5rem;
+}
+
+.full-post .post-description {
+    overflow: visible;
+    height: auto;
+    max-height: auto;
+    line-height: 2rem;
+    max-height: initial;
+}
+
+.full-post .post-description:after {
     content: none;
+}
+
+/* Full Post content view only */
+.expanded-content {
+    display: none;
+}
+
+.full-post .expanded-content {
+    display: block;
+}
+
+.full-post .post-content {
+    max-width: 50rem;
+    justify-content: center;
+}
+
+.full-post .emphasize-post {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.full-post .italics-post {
+    font-style: italic;
+}
+
+.full-post .line-breaker {
+    display: block;
+    margin-bottom: 0.7em;
+}
+
+.post-img {
+    opacity: 0.7;
+    position: fixed;
+    top: 30vh;
+    left: 30vw;
+    height: 50vh;
+    z-index: -1;
+}
+
+@media(max-width: 500px) {
+    .post {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media(min-width: 700px) {
+    .full-post .post-link {
+        /* for back arrow */
+        margin-left: 0;
+    }
+
+    .post-img {
+        height: auto;
+        width: 100vw;
+    }
 }
