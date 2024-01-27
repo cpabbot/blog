@@ -13,7 +13,7 @@
         var positionFromTop = elements[i].getBoundingClientRect().top;
         
         // console.log(i + ": " + positionFromTop + " - " + windowHeight);
-        if (positionFromTop - windowHeight <= -100) {
+        if (positionFromTop - windowHeight <= -80) {
           element.classList.add('fade-in');
           element.classList.remove('scroll-fade');
         }
